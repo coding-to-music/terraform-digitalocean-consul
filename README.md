@@ -129,3 +129,39 @@ No modules.
 | <a name="output_server_public_ips"></a> [server_public_ips](#output_server_public_ips) | List of public IPs for the Consul servers           |
 
 <!-- END_TF_DOCS -->
+
+## Attempt to run
+
+```
+terraform plan
+```
+
+```
+running terraform get update then plan
+provider.vault.address
+  URL of the root of the target Vault server.
+
+  Enter a value: ^C
+
+Interrupt received.
+Please wait for Terraform to exit or data loss may occur.
+Gracefully shutting down...
+
+Stopping operation...
+data.digitalocean_project.p: Reading...
+data.digitalocean_image.ubuntu: Reading...
+data.digitalocean_vpc.selected: Reading...
+data.http.ssh_key: Reading...
+╷
+│ Warning: Deprecated attribute
+│
+│   on main.tf line 78, in resource "digitalocean_droplet" "server":
+│   78:       ssh_pub_key    = data.http.ssh_key.body
+│
+│ The attribute "body" is deprecated. Refer to the provider documentation for details.
+│
+│ (and one more similar warning elsewhere)
+╵
+╷
+│ Error: execution halted
+```
